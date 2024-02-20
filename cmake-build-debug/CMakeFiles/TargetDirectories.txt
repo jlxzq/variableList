@@ -1,0 +1,5 @@
+D:/project/Qt/variableList/cmake-build-debug/CMakeFiles/variableList.dir
+D:/project/Qt/variableList/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/project/Qt/variableList/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/project/Qt/variableList/cmake-build-debug/CMakeFiles/variableList_autogen_timestamp_deps.dir
+D:/project/Qt/variableList/cmake-build-debug/CMakeFiles/variableList_autogen.dir
