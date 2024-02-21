@@ -13,7 +13,7 @@ set(CMAKE_AUTOUIC ON)
 set(QXLSX_DIR "${CMAKE_CURRENT_SOURCE_DIR}/QXlsx")
 
 # 查找并导入Qt5模块
-find_package(Qt5 COMPONENTS Quick Core Gui Widgets Xlsx REQUIRED)
+find_package(Qt5 COMPONENTS Quick Core Gui Widgets REQUIRED)
 
 # 添加QXlsx库
 add_library(QXlsx STATIC IMPORTED)
