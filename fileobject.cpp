@@ -1,7 +1,7 @@
 #include "fileobject.h"
-#include <QFileInfo>
-#include <QColor>
 #include "xlsxdocument.h"
+
+using namespace QXlsx;
 
 FileObject::FileObject(QObject *parent) : QObject(parent) {
     initializeHeader();
@@ -41,7 +41,7 @@ QVariantList FileObject::read() {
     QStringList headerList;
     for (int col = 1; col <= colCount; ++col) {
         QString header = xlsx.read(1, col).toString();
-        for (const auto &pair : headerVector) {
+        for (const auto &pair: headerVector) {
             if (pair.second == header) {
                 headerList.append(pair.first);
                 break;
@@ -70,7 +70,7 @@ bool FileObject::write(const QVariantList &dataList) {
 
     int count = 1;
     QString newFileName = m_source;
-    while(QFile::exists(newFileName)){
+    while (QFile::exists(newFileName)) {
         newFileName = QString("%1/%2_%3.%4").arg(basePath).arg(baseName).arg(count).arg(suffix);
         count++;
     }

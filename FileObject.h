@@ -2,7 +2,9 @@
 #define FILEOBJECT_H
 
 #include <QObject>
-#include <QtXlsx>
+#include <QFileInfo>
+#include <QColor>
+#include <QVariant>
 
 class FileObject : public QObject {
 Q_OBJECT

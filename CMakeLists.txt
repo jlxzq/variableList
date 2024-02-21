@@ -9,11 +9,16 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+# 设置QXlsx路径
+set(QXLSX_DIR "${CMAKE_CURRENT_SOURCE_DIR}/QXlsx")
+
 # 查找并导入Qt5模块
 find_package(Qt5 COMPONENTS Quick Core Gui Widgets Xlsx REQUIRED)
 
-# 设置Qt5库的查找路径
-list(APPEND CMAKE_PREFIX_PATH "path/to/Qt/lib/cmake/Qt5")
+# 添加QXlsx库
+add_library(QXlsx STATIC IMPORTED)
+set_target_properties(QXlsx PROPERTIES IMPORTED_LOCATION "${QXLSX_DIR}/lib/libQXlsx.a")
+target_include_directories(QXlsx INTERFACE "${QXLSX_DIR}/include")
 
 # 定义可执行文件及其源文件
 add_executable(variableList
@@ -34,5 +39,5 @@ target_link_libraries(variableList
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
-        Qt5::Xlsx
+        QXlsx
 )
